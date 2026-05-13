@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+cat > README.md << 'EOF'
+# 🀄 Millefiori — Медитативный Маджонг-пасьянс
 
-## Getting Started
+> **Millefiori** (с итал. "тысяча цветов") — это веб-приложение, которое превращает классический маджонг-пасьянс в увлекательную игру с ИИ-ассистентом, ежедневными заданиями, магазином скинов и таблицей лидеров.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎯 Для кого этот продукт?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🧘 Для тех, кто ищет **медитативный отдых** и хочет расслабиться после рабочего дня.
+- 🧠 Для любителей **головоломок и логических задач**.
+- 🎮 Для игроков, которым мало просто "кликать по тайлам" — им нужна **прогрессия и цель**.
+- 👥 Для тех, кто ценит **красивый, современный дизайн** и плавные анимации.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 💎 Почему это ценно? (УТП)
 
-## Learn More
+В отличие от существующих аналогов (например, Mahjong Solitaire), этот продукт предлагает **уникальный опыт**:
 
-To learn more about Next.js, take a look at the following resources:
+- **🤖 ИИ-ассистент Сэнсэй** — не просто подсвечивает пары, а анализирует поле и даёт стратегические советы ("Лучше открыть верхний слой", "Этот ход может заблокировать дальнейшие пары").
+- **📅 Ежедневные задания и награды** — новый челлендж каждый день, календарь наград на 7 дней (как в мобильных играх).
+- **🎨 Магазин кастомных скинов** — смена дизайна тайлов (Нефрит, Сакура, Киберпанк), игрового поля и визуальных эффектов.
+- **🏆 Система прогресса и лидерборд** — игроки видят свою статистику, процент побед и могут соревноваться с другими.
+- **💾 Полное сохранение прогресса** — история всех игр, рекорды и скорость прохождения.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Всё это создаёт **"петлю возвращаемости"**: игрок хочет вернуться завтра, чтобы получить новую награду и побить рекорд.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠 Технологический стек
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Категория | Технология |
+|-----------|------------|
+| **Frontend** | Next.js 16 (App Router), TypeScript, Tailwind CSS |
+| **Анимации** | Framer Motion |
+| **State Management** | Zustand |
+| **Backend/Database** | Supabase (PostgreSQL, Realtime, RLS) |
+| **Аутентификация** | Supabase Auth (email/password) |
+| **Платежи** | Stripe (демо-режим) |
+| **ИИ-помощник** | Собственная система анализа и рекомендаций |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ✨ Ключевые функции
+
+### 🎮 Игровой процесс
+- 4 уровня сложности (Лёгкий → Мастер)
+- Гарантированно решаемые раскладки
+- Подсказки и отмена ходов
+- Таймер и статистика
+- Адаптивный дизайн (телефон/ПК)
+
+### 🤖 ИИ-ассистент Сэнсэй
+- Обучение для новичков (пошаговый туториал)
+- Ответы на вопросы в реальном времени (чат)
+- Анализ игровой ситуации (кнопка 🔍)
+- Стратегические советы каждые 8 ходов
+- Предупреждение о тупиковых ситуациях
+
+### 📅 Ежедневная система
+- Уникальные задания каждый день
+- Календарь наград (7 дней подряд)
+- Бонусы: подсказки, отмены, скины, очки
+
+### 🛍️ Магазин скинов
+- Скины тайлов (Нефрит, Сакура, Киберпанк, Золотой дракон)
+- Скины игрового поля (Тёмное сукно, Бамбуковый стол)
+- Визуальные эффекты
+- Интеграция со Stripe (демо-режим)
+
+### 👥 Социальные функции
+- Таблица лидеров (по очкам/времени/победам)
+- Статистика игрока (история, % побед, лучшее время)
+- Профиль игрока
+
+---
+
+## 🚀 Как запустить проект
+
+1. `git clone https://github.com/lordtop122/millefiori.git`
+2. `cd millefiori`
+3. `npm install`
+4. Создать проект на supabase.com
+5. Скопировать ключи в `.env.local`
+6. Выполнить SQL из `supabase/migrations/001_initial_schema.sql`
+7. `npm run dev`
+8. Открыть http://localhost:3000
+
+---
+
+## 📄 Лицензия
+
+MIT
